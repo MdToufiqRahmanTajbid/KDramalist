@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>K-Drama Directory</title>
   <style>
-    /* ===== USING THE SAME TEMPLATE STRUCTURE ===== */
+    /* ===== DO NOT MODIFY TEMPLATE STRUCTURE ===== */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #121224;
@@ -90,16 +90,20 @@
   </style>
 </head>
 <body>
+  <!-- ====== HEADER SECTION ====== -->
   <h1>🎬 K-Drama Directory</h1>
   <p class="subtitle">Explore the best Korean dramas</p>
+
+  <!-- ====== DRAMA COUNT SECTION ====== -->
   <div class="count">Total Dramas Available: <span id="drama-count">0</span></div>
 
+  <!-- ====== DRAMA LIST SECTION ====== -->
   <div id="drama-list">
-    <!-- Drama cards are here -->
+    <!-- Drama cards will appear here -->
   </div>
 
   <script>
-    // ===== HERE IS MY JAVASCRIPT CODE BELOW THIS LINE =====
+    // ===== WRITE YOUR JAVASCRIPT CODE BELOW THIS LINE =====
 
     const kdramas = [
       { title: "Crash Landing on You", year: 2019, genre: "Romance, Comedy, Drama", rating: 9.1, episodes: 16 },
@@ -121,10 +125,12 @@
     const dramaList = document.getElementById("drama-list");
     const countElement = document.getElementById("drama-count");
 
+    // ===== FUNCTION TO GENERATE RANDOM EMOJI =====
     function getRandomEmoji() {
       return emojis[Math.floor(Math.random() * emojis.length)];
     }
 
+    // ===== CREATE AND DISPLAY DRAMA CARDS =====
     kdramas.forEach(drama => {
       const card = document.createElement("div");
       card.classList.add("card");
@@ -142,6 +148,7 @@
       dramaList.appendChild(card);
     });
 
+    // ===== DISPLAY TOTAL COUNT =====
     countElement.textContent = kdramas.length;
   </script>
 </body>
